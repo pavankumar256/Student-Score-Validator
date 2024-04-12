@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>studentscorecalculator</title>
+    <style>
+   body {
+   font-family: Arial, sans-serif;
+   background-color: white;
+   margin: 20px;
+}
+
+form {
+   background-color: yellow;
+   padding: 25px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+input[type="text"], {
+   width: 100%;
+   padding: 10px;
+   margin: 8px 0;
+   box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: blue;
+   color: white;
+   padding: 10px 35px;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   margin-right: 38px;
+}
+}
+
+input[type="submit"]:hover {
+   background-color: pink;
+}
+
+input[type="text"] {
+   border: 1px solid #ccc;
+   background-color: white;
+   padding: 10px;
+   margin-top: 10px;
+   width: calc(100% - 22px);
+   border-radius: 4px;
+   box-sizing: border-box;
+   color: #333;
+}
+h3{text-align: center;color: #3349FF;}
+
+
+</style>
+
+</head>
+<body style = "background-color:gray">
+<form method = "post" action = "display">
+    {% csrf_token %}
+    <h3> STUDENT SCORE CALCULATOR</h3>
+    <b>NAME : </b><input type = "text" name = "txtname" value = "{{n}}" ><br>
+    <b>PYTHON : </b><input type = "text" name = "txtpython" value = "{{s1}}"><br>
+    <b>JAVA : </b><input type = "text" name = "txtjava" value = "{{s2}}" ><br>
+    <b>MYSQL : </b><input type = "text" name = "txtmysql" value = "{{s3}}"><br>
+    <b>HTML : </b><input type = "text" name = "txthtml" value = "{{s4}}"><br>
+    <b>DJANGO : </b><input type = "text" name = "txtdjango" value = "{{s5}}"><br>
+    <input type = "submit" name = "operation" value = "TOTAL">
+    <input type = "submit" name = "operation" value = "PERCENTAGE">
+    <input type = "submit" name = "operation" value = "GRADE">
+    <input type = "submit" name = "operation" value = "STATUS">
+    <input type = "text" name = "txtresult" value = "{{res}}" >
+</form>
+</body>
+</html>
